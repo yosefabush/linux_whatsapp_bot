@@ -18,7 +18,6 @@ TOKEN = os.getenv('TOKEN', default=None)
 VERIFY_TOKEN = os.getenv("VERIFY_TOKEN", default=None)
 PHONE_NUMBER_ID_PROVIDER = os.getenv("NUMBER_ID_PROVIDER", default="104091002619024")
 FACEBOOK_API_URL = 'https://graph.facebook.com/v16.0'
-WHATS_API_URL = 'https://api.whatsapp.com/v3'
 TIMEOUT_FOR_OPEN_SESSION_MINUTES = 1
 if None in [TOKEN, VERIFY_TOKEN]:
     raise Exception(f"Error on env var '{TOKEN, VERIFY_TOKEN}' ")
@@ -356,4 +355,4 @@ def receive_message_chat_whatsapp():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=PORT)
